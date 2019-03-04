@@ -5,7 +5,7 @@ workflow "Merge Bot" {
 
 action "actor-filter" {
   uses = "actions/bin/filter@master"
-  args = ["actor", "mojombo", "defunkt", "pjhyett", "schacon"]
+  args = ["actor", "marccampbell"]
 }
 
 action "comment-filter" {
