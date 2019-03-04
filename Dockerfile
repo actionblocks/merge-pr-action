@@ -12,7 +12,7 @@ LABEL "homepage"="http://github.com/actionblocks/merge-pr-action"
 # ENV ACTIONBLOCKS_ENTRYPOINT "/action/entrypoint.sh"
 
 RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y jq curl && \
+    apt-get install --no-install-recommends -y jq curl ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 ADD entrypoint.sh /action/entrypoint.sh
