@@ -17,4 +17,7 @@ action "Merge" {
   needs = ["actor-filter", "comment-filter"]
   uses = "./"
   args = ""
+  secrets = [
+    "GITHUB_TOKEN"
+  ]
 }
