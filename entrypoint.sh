@@ -10,8 +10,12 @@ fi
 # Get the issue nbyumber from the event
 ISSUE_NUMBER=$(cat $EVENT_FILE | jq -r .issue.number)
 
+echo "Issue Number: ${ISSUE_NUMBER}"
+
 # Build the URL to ge the PR
 GET_PULLREQUEST_URL=$(cat $EVENT_FILE | jq -r .repository.pulls_url | sed  -e "s/{\/number}/\/$ISSUE_NUMBER/g")
+
+echo "Pull Request URL: ${GET_PULLREQUEST_URL}"
 
 # Fetch the PR data
 PULL_DATA=$(curl -s -S -H "Authorization: token $GITHUB_TOKEN" --header "Content-Type: application/json" "$GET_PULLREQUEST_URL")
